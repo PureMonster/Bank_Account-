@@ -1,18 +1,19 @@
-#include "BankAcount.h"
+#include "BankAccount.h"
 #include<iostream>
+#include<string>
 using namespace std;
 
-void BankAcount::SetAccountnum(int num)
+void BankAccount::SetAccountnum(int num)
 {
 	AccountNum = num;
 }
 
-void BankAcount::SetDeposit(int num)
+void BankAccount::SetDeposit(double num)
 {
 	Balance += num;
 }
 
-void BankAcount::SetWithdraw(double number)
+void BankAccount::SetWithdraw(double number)
 {
 	if (number <= Balance) {
 		Balance -= number;
@@ -21,47 +22,49 @@ void BankAcount::SetWithdraw(double number)
 		cout << "Your Balance is not enough \n";
 }
 
-int BankAcount::GetAccountNum()
+int BankAccount::GetAccountNum()
 {
 	return AccountNum;
 }
 
-void BankAcount::Setname(string n)
+void BankAccount::Setname(string n)
 {
 	name = n;
 }
 
-string BankAcount::Getname()
+string BankAccount::Getname()
 {
 	return name;
 }
 
-void BankAcount::SetBalance(double num)
+void BankAccount::SetBalance(double num)
 {
 	Balance = num;
 }
 
-double BankAcount::GetBalance()
+double BankAccount::GetBalance()
 {
 	return Balance;
 }
 
-BankAcount::BankAcount()
+BankAccount::BankAccount()
 {
+}
+BankAccount::BankAccount(int num, string name, double Balance) : AccountNum(num), name(name), Balance(Balance)
+{
+}
+BankAccount::~BankAccount()
+{
+}
 
-}
-BankAcount::BankAcount(int num, string name, double Balance):AccountNum(num), name(name), Balance(Balance)
-{
-}
-BankAcount::~BankAcount()
-{
-}
+
 int main() {
-	BankAcount Acc1 ;
+	BankAccount Acc1;
 	Acc1.SetBalance(100);
 	Acc1.Setname("farah");
-	cout << "your balance is : " << Acc1.GetBalance();
+	cout << "your balance is : " << Acc1.GetBalance()<< "\n";
 	cout << "your name is : " << Acc1.Getname();
-	
+
 	return 0;
+}
 }
