@@ -1,23 +1,24 @@
 #pragma once
-# include <string>;
-#include <iostream>;
-class BankAcount
+#include <string>
+#include <iostream>
+using namespace std;
+class BankAccount
 {
-private : 
+private:
 	int AccountNum;
 	string name;
 	double Balance;
 
-public : 
+public:
 	void SetAccountnum(int num);
-	void SetDeposit(int num);
+	void SetDeposit(double num);
 	void SetWithdraw(double num);
 	int GetAccountNum();
 	void Setname(string num);
 	string Getname();
 	void SetBalance(double num);
 	double GetBalance();
-	BankAcount();
-	BankAcount(int AN ,string HN , double B);
-	~ BankAcount();
+	BankAccount();
+	BankAccount(int num, string name, double balance);
+	~BankAccount();
 };
